@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             dot.classList.add('dot_selected');
         }
 
-        // Ajouter un Event Listener pour chaque point si nécessaire
+        // Ajouter un Event Listener pour chaque point si nécessaire 
         dot.addEventListener('click', function () {
             console.log(`Clic sur le point ${index}`);
             // Ajoutez ici la logique pour afficher la diapositive correspondante
