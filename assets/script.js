@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             dot.classList.toggle('dot_selected', dotIndex === index);
         });
 
-        // Mettre à jour l'image
+        // Mettre à jour l'image 
         const imagePath = `./assets/images/slideshow/${slides[index].image}`;
         bannerImg.src = imagePath;
 
