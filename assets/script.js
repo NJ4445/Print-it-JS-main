@@ -16,7 +16,6 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
-
 document.addEventListener('DOMContentLoaded', function () {
     // ... autres gestionnaires d'événements ...
 
@@ -81,4 +80,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialiser la première diapositive
     updateSlide(currentSlideIndex);
+
+    // Ajouter une gestion du clavier pour le défilement
+    document.addEventListener('keydown', function (e) {
+        if (e.code === 'ArrowLeft') {
+            // Passer à la diapositive précédente
+            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+            updateSlide(currentSlideIndex);
+        } else if (e.code === 'ArrowRight') {
+            // Passer à la diapositive suivante
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            updateSlide(currentSlideIndex);
+        }
+    });
 });
