@@ -17,7 +17,7 @@ const slides = [
 	}
 ]
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     // Récupération des éléments du carrousel
     const arrowLeft = document.querySelector('.arrow_left');
     const arrowRight = document.querySelector('.arrow_right');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const bannerImg = document.querySelector('.banner-img');
     const bannerText = document.querySelector('#banner p');
 
-    // Index de la diapositive actuelle
+    // Index de la diapositive actuelle 
     let currentSlideIndex = 0;
 
     // Fonction pour mettre à jour l'affichage en fonction de l'index de la diapositive
