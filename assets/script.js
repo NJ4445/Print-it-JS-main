@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Passer à la diapositive suivante (modulo pour la boucle)
         currentSlideIndex = (currentSlideIndex + 1) % slides.length;
         updateSlide(currentSlideIndex);
+        console.log('Clic sur la flèche droite');
     });
 
     // Gestionnaire d'événement pour la flèche gauche
@@ -56,6 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Passer à la diapositive précédente (modulo pour la boucle)
         currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
         updateSlide(currentSlideIndex);
+        console.log('Clic sur la flèche gauche');
+
     });
 
     // Générer les points dynamiquement
@@ -86,10 +89,12 @@ document.addEventListener('DOMContentLoaded', function () {
             // Passer à la diapositive précédente
             currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
             updateSlide(currentSlideIndex);
+            console.log('Appui sur la touche gauche');
         } else if (e.code === 'ArrowRight') {
             // Passer à la diapositive suivante
             currentSlideIndex = (currentSlideIndex + 1) % slides.length;
             updateSlide(currentSlideIndex);
+            console.log('Appui sur la touche droite');
         }
     });
 });
