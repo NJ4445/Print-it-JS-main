@@ -16,6 +16,7 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
 document.addEventListener('DOMContentLoaded', function () {
     // ... autres gestionnaires d'événements ...
 
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             dot.classList.add('dot_selected');
         }
 
-        // Ajouter un Event Listener pour chaque point
+        // Ajouter un Event Listener pour chaque point si nécessaire 
         dot.addEventListener('click', function () {
             console.log(`Clic sur le point ${index}`);
             // Ajoutez ici la logique pour afficher la diapositive correspondante
@@ -80,27 +81,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialiser la première diapositive
     updateSlide(currentSlideIndex);
-
-    // Fonction pour gérer le défilement infini
-    function handleInfiniteScroll(direction) {
-        if (direction === 'left' && currentSlideIndex === 0) {
-            // Si on est à la première image et qu'on clique à gauche
-            currentSlideIndex = slides.length - 1;
-        } else if (direction === 'right' && currentSlideIndex === slides.length - 1) {
-            // Si on est à la dernière image et qu'on clique à droite
-            currentSlideIndex = 0;
-        }
-
-        updateSlide(currentSlideIndex);
-    }
-
-    // Ajouter un gestionnaire d'événement pour le défilement infini à gauche
-    arrowLeft.addEventListener('click', function () {
-        handleInfiniteScroll('left');
-    });
-
-    // Ajouter un gestionnaire d'événement pour le défilement infini à droite
-    arrowRight.addEventListener('click', function () {
-        handleInfiniteScroll('right');
-    });
 });
