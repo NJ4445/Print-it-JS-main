@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const arrowRight = document.querySelector('.arrow_right');
     const dotsContainer = document.querySelector('.dots');
     const bannerImg = document.querySelector('.banner-img');
-    const bannerText = document.querySelector('#banner p');
+    const bannerText = document.querySelector('#banner p'); 
 
     // Index de la diapositive actuelle 
     let currentSlideIndex = 0;
