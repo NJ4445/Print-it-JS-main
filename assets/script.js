@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Index de la diapositive actuelle 
     let currentSlideIndex = 0;
 
-    // Fonction pour mettre à jour l'affichage en fonction de l'index de la diapositive
+    // Fonction pour mettre à jour l'affichage en fonction de l'index de la diapositive 
     function updateSlide(index) {
         // Mettre à jour le bullet point actif
         const dots = dotsContainer.querySelectorAll('.dot');
