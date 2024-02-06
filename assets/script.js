@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialiser la première diapositive
     updateSlide(currentSlideIndex);
 
-    // Ajouter une gestion du clavier pour le défilement
+    // Ajouter une gestion du clavier pour le défilement 
     document.addEventListener('keydown', function (e) {
         if (e.code === 'ArrowLeft') {
             // Passer à la diapositive précédente
