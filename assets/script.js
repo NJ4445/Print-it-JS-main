@@ -18,7 +18,7 @@ const slides = [
 ]
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Récupération des éléments du carrousel
+    // Récupération des éléments du carrousel 
     const arrowLeft = document.querySelector('.arrow_left');
     const arrowRight = document.querySelector('.arrow_right');
     const dotsContainer = document.querySelector('.dots');
