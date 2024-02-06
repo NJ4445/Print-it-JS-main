@@ -16,10 +16,9 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+document.addEventListener('DOMContentLoaded', function () {
 
-document.addEventListener('DOMContentLoaded', function () { 
-
-    // Récupération des éléments du carrousel 
+    // Récupération des éléments du carrousel
     const arrowLeft = document.querySelector('.arrow_left');
     const arrowRight = document.querySelector('.arrow_right');
     const dotsContainer = document.querySelector('.dots');
@@ -46,33 +45,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Gestionnaire d'événement pour la flèche droite
-	arrowRight.addEventListener('click', function () {
-    // Passer à la diapositive suivante
-    currentSlideIndex = (currentSlideIndex + 1);
-    if (currentSlideIndex === slides.length) {
-        currentSlideIndex = 0;
-    }
-    updateSlide(currentSlideIndex);
-    console.log('Clic sur la flèche droite');
-});
+    arrowRight.addEventListener('click', function () {
+        // Passer à la diapositive suivante (modulo pour la boucle)
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        updateSlide(currentSlideIndex);
+        console.log('Clic sur la flèche droite');
+    });
 
-// Gestionnaire d'événement pour la flèche gauche
-	arrowLeft.addEventListener('click', function () {
-    // Passer à la diapositive précédente
-    currentSlideIndex = (currentSlideIndex - 1);
-    if (currentSlideIndex < 0) {
-        currentSlideIndex = slides.length - 1;
-    }
-    updateSlide(currentSlideIndex);
-    console.log('Clic sur la flèche gauche');
-});
+    // Gestionnaire d'événement pour la flèche gauche
+    arrowLeft.addEventListener('click', function () {
+        // Passer à la diapositive précédente (modulo pour la boucle)
+        currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+        updateSlide(currentSlideIndex);
+        console.log('Clic sur la flèche gauche');
+
+    });
 
     // Générer les points dynamiquement
     slides.forEach((slide, index) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
         if (index === 0) {
-            dot.classList.add('dot_selected');
+            dot.classList.add('dot_selected'); 
         }
 
         // Ajouter un Event Listener pour chaque point si nécessaire 
@@ -89,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialiser la première diapositive
     updateSlide(currentSlideIndex);
 
-    // Ajouter une gestion du clavier pour le défilement
+    // Ajouter une gestion du clavier pour le défilement 
     document.addEventListener('keydown', function (e) {
         if (e.code === 'ArrowLeft') {
             // Passer à la diapositive précédente
@@ -103,5 +97,4 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Appui sur la touche droite');
         }
     });
-}); 
-
+});
